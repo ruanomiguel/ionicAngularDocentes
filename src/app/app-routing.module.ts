@@ -17,7 +17,12 @@ const routes: Routes = [
   {
     path: 'editarmaterias',
     loadChildren: () => import('./editarmaterias/editarmaterias.module').then( m => m.EditarmateriasPageModule)
+  },
+  {
+    path: 'detalle-maestro',
+    loadChildren: () => import('./detalle-maestro/detalle-maestro.module').then( m => m.DetalleMaestroPageModule)
   }
+
 ];
 @NgModule({
   imports: [

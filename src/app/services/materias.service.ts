@@ -27,9 +27,9 @@ export class MateriasService {
     return of(MATERIAS.find(x => x.id === id));
  }
 
-   editarmaterias(materias: Materias): Observable<Materias | undefined> {
+   editarMaterias(materias: Materias): Observable<Materias | undefined> {
        let id = Number(materias.id);
-       let indice: number = MATERIAS.findIndex(x => x.id === id);
+       let indice:number = MATERIAS.findIndex(x => x.id === id);
        MATERIAS[indice] = materias;
        return of(MATERIAS[indice]);
    }

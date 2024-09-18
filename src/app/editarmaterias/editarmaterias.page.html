@@ -1,13 +1,52 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Editarmaterias</ion-title>
+    <ion-title>Editar materias</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="regresar()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">editarmaterias</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<ion-content [fullscreen]="true" *ngIf="seleccionado">
+   <form  (ngSumit)="editar(seleccionado)" #editarForm="ngForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">ID:</ion-label>
+        <ion-input aria-label="ID:" type="text" readonly="true" name="id" [(ngModel)]="seleccionado.id" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre de asignatura:</ion-label>
+        <ion-input type="text" name="asignatura" [(ngModel)]="seleccionado.nombre_materia" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Programa:</ion-label>
+        <ion-select required value="{{seleccionado.programa}}" [(ngModel)]="seleccionado.programa" name="programa">
+          <ion-select-option value="Ingenieria informatica">Ingenieria informatica</ion-select-option>
+          <ion-select-option value="Ingenieria Multimedia">Ingenieria Multimedia</ion-select-option>
+          <ion-select-option value="Desarrollo de software">Desarrollo de software</ion-select-option>
+          <ion-select-option value="Diseño visual">Diseño visual</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Semestre: {{ seleccionado.semestre }}</ion-label>
+        <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="seleccionado.semestre" name="semestre">
+          <ion-label slot="start">1</ion-label>
+          <ion-label slot="end">10</ion-label>
+        </ion-range>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Horario:</ion-label>
+        <ion-input type="text" name="horario" [(ngModel)]="seleccionado.horario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Salon:</ion-label>
+        <ion-input type="text" name="salon" [(ngModel)]="seleccionado.salon"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button color="primary" type="submit" *ngIf="seleccionado" [disabled]="!this.editarForm.form.valid">
+      Guardar
+    </ion-button>
+   </form>
+</ion-content> 

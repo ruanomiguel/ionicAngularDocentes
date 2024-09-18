@@ -28,7 +28,7 @@ const routes: Routes = [
         loadChildren: () => import('../estudiantes/estudiantes.module').then(m => m.EstudiantesPageModule)
       },
       {
-        path: 'editarmaterias',
+        path: 'editarmaterias/:id',
         loadChildren: () => import('../editarmaterias/editarmaterias.module').then(m => m.EditarmateriasPageModule)
       },
       {

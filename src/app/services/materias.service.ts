@@ -25,12 +25,12 @@ export class MateriasService {
   getUnaMaterias(id: number): Observable<Materias | undefined> {
     id = Number(id);
     return of(MATERIAS.find(x => x.id === id));
-}
+ }
 
-  editarPelicula(materias: Materias): Observable<Materias | undefined> {
-      let id = Number(materias.nombre_materia);
-      let indice: number = MATERIAS.findIndex(x => x.nombre_materia === nombre_materia);
-      MATERIAS[indice] = materias;
-      return of(MATERIAS[indice]);
-  }
+   editarmaterias(materias: Materias): Observable<Materias | undefined> {
+       let id = Number(materias.id);
+       let indice: number = MATERIAS.findIndex(x => x.id === id);
+       MATERIAS[indice] = materias;
+       return of(MATERIAS[indice]);
+   }
 }

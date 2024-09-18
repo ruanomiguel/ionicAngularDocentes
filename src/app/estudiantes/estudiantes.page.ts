@@ -10,6 +10,7 @@ export class EstudiantesPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
+    
+  }  
 
 }

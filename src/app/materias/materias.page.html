@@ -10,13 +10,12 @@
       <ion-item>
         <ion-icon slot="start" name="book-outline"></ion-icon>
         <ion-label>
-          <h2>{{materiasItem.nombre_materia}}</h2>
+          <h2>{{materiasItem.id}}</h2>
+          <P>{{materiasItem.nombre_materia}}</P>
           <p>{{materiasItem.programa}}</p>
           <p>{{materiasItem.semestre}}</p>
           <p>{{materiasItem.horario}}</p>
           <p>{{materiasItem.salon}}</p>
-          <h2> la vida es bella </h2>
-          <h3>la vida me castiga</h3>
         </ion-label>
       </ion-item>
     
@@ -24,11 +23,12 @@
         <ion-item-option color="danger"(click)="borrarMaterias(materiasItem);$event.stopPropagation();">
           <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-item-option>
-        <ion-item-option>
+
+        <ion-item-option routerLink="../editarmaterias/{{materiasItem.id}}">
           <ion-icon slot="icon-only" name="pencil"></ion-icon>
         </ion-item-option>
-      </ion-item-options>
 
-    </ion-item-sliding>
-  </ion-list>
+      </ion-item-options>
+      </ion-item-sliding>
+     </ion-list>
 </ion-content>

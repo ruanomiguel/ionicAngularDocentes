@@ -33,4 +33,16 @@ export class MateriasService {
        MATERIAS[indice] = materias;
        return of(MATERIAS[indice]);
    }
+
+   updateMaterias(id: number, materias: Materias): Observable<Materias | undefined> {
+    const index = MATERIAS.findIndex(x => x.id === id);
+    
+    if (index !== -1) {
+      // Actualizar la materia en la lista
+      MATERIAS[index] = materias;
+      return of(MATERIAS[index]);
+    } else {
+      return of(undefined);
+    }
+  }
 }

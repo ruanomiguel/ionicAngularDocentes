@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" *ngIf="seleccionado">
-   <form  (ngSumit)="editar(seleccionado)" #editarForm="ngForm">
+  <form (ngSubmit)="editar(seleccionado)" #editarForm="ngForm">
     <ion-list>
       <ion-item>
         <ion-label position="floating">ID:</ion-label>
@@ -45,8 +45,8 @@
         <ion-input type="text" name="salon" [(ngModel)]="seleccionado.salon"></ion-input>
       </ion-item>
     </ion-list>
-    <ion-button color="primary" type="submit" *ngIf="seleccionado" [disabled]="!this.editarForm.form.valid">
+    <ion-button color="primary" type="submit" *ngIf="seleccionado" [disabled]="!editarForm.form.valid">
       Guardar
     </ion-button>
-   </form>
-</ion-content> 
+  </form>
+</ion-content>

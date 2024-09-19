@@ -23,6 +23,8 @@ export class MateriasPage implements OnInit {
     this.materiasService.getMatrias().subscribe(materias => this.mismaterias = materias)
   }
 
+ 
+
   ngOnInit() {
     this.getMaterias();
   }

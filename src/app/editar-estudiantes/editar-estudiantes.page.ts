@@ -38,13 +38,16 @@ export class EditarEstudiantesPage implements OnInit {
   }
 
   editar(estudiantes: Estudiantes): void {
-    // Aquí puedes agregar la lógica que desees para editar la materia.
-    
-    // Simular un proceso de edición
+    // Recalcular la nota final
+    estudiantes.notafinal = (estudiantes.parcial1 * 0.35) + 
+                            (estudiantes.parcial2 * 0.35) + 
+                            (estudiantes.parcial3 * 0.30);
+  
+    // Actualizar el estudiante
     this.estudiantesService.updateEstudiantes(estudiantes.id, estudiantes).subscribe(() => {
-      // Redirigir después de guardar los cambios
       this.router.navigate(['/tabs/estudiantes']);
     });
   }
+  
 
 }

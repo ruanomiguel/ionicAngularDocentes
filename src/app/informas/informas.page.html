@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>informacion Adicional</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let informItem of informas">
+    <ion-item>
+      <ion-icon slot="start" name="person-circle"></ion-icon>
+      <ion-label>
+        <h2>Nombre: {{informItem.nombre_estudiante}}</h2>
+      </ion-label>
+    </ion-item>
+  
+    <ion-card-content>
+      <h2>Calificacion: {{informItem.nota_estudiante}}</h2>
+      <p>Descripción del actor, puede listar mayor información</p>
+      <p>lorem impum lorem impum lorem impum lorem impum lorem impum lorem impum</p>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

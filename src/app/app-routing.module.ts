@@ -24,6 +24,10 @@ const routes: Routes = [
   },  {
     path: 'editar-estudiantes',
     loadChildren: () => import('./editar-estudiantes/editar-estudiantes.module').then( m => m.EditarEstudiantesPageModule)
+  },
+  {
+    path: 'informas',
+    loadChildren: () => import('./informas/informas.module').then( m => m.InformasPageModule)
   }
 
 

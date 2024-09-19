@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Formulario de estudiantes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="guardarEstudiante()" #EstudianteForm="ngForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nombre_estudiante:</ion-label>
+        <ion-input type="text" name="nombre" [(ngModel)]="estudiante.nombre" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">parcial1:</ion-label>
+        <ion-input type="text" name="parcial1" [(ngModel)]="estudiante.parcial1"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">parcial2:</ion-label>
+        <ion-input type="text" name="parcial2" [(ngModel)]="estudiante.parcial2"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">parcial3:</ion-label>
+        <ion-input type="text" name="parcial3" [(ngModel)]="estudiante.parcial3"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">nota:</ion-label>
+        <ion-input type="text" name="notafinal" [(ngModel)]="estudiante.notafinal"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button color="primary" type="submit" [disabled]="!EstudianteForm.form.valid">
+      Guardar
+    </ion-button>
+  </form>
+</ion-content>
+
+

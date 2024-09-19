@@ -7,11 +7,29 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h2>Formulario de Materias</h2>
+  <form id="materiaForm">
+      <label for="nombre_materia">Nombre de la Materia:</label><br>
+      <input type="text" id="nombre_materia" name="nombre_materia" required><br><br>
+
+      <label for="programa">Programa:</label><br>
+      <select id="programa" name="programa" required>
+          <option value="ingenieria">Ingeniería</option>
+          <option value="Desarrollo">Desarrollo</option>
+          <option value="Ciencias">Ciencias</option>
+      </select><br><br>
+
+      <label for="semestre">Semestre:</label><br>
+      <input type="number" id="semestre" name="semestre" min="1" max="10" required><br><br>
+
+      <label for="horario">Horario:</label><br>
+      <input type="time" id="horario" name="horario" required><br><br>
+
+      <label for="salon">Salón:</label><br>
+      <input type="text" id="salon" name="salon" required><br><br>
+
+      <button type="submit">Guardar</button>
+  </form>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>

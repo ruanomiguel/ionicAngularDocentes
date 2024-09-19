@@ -1,9 +1,12 @@
 import { Estudiantes } from "./estudiantes";
 
-export const ESTUDIANTES : Estudiantes[] = [
-    {id:1,nombre:'Luis',nota:10},
-    {id:2,nombre:'Estiven',nota:5},
-    {id:3,nombre:'Miguel',nota:5},
-    {id:4,nombre:'carlos',nota:3},
-    {id:5,nombre:'messi',nota:4},
-]
+export const ESTUDIANTES: Estudiantes[] = [
+    { id: 1, nombre: 'Luis', parcial1: 3, parcial2: 4, parcial3: 3 },
+    { id: 2, nombre: 'Estiven', parcial1: 3, parcial2: 4, parcial3: 3 },
+    { id: 3, nombre: 'Miguel', parcial1: 5, parcial2: 3, parcial3: 3 },
+    { id: 4, nombre: 'Carlos', parcial1: 4, parcial2: 3, parcial3: 3 },
+    { id: 5, nombre: 'Messi', parcial1: 1, parcial2: 4, parcial3: 3 },
+].map(estudiante => ({
+    ...estudiante,
+    notafinal: (estudiante.parcial1 * 0.35) + (estudiante.parcial2 * 0.35) + (estudiante.parcial3 * 0.30)
+}));

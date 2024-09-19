@@ -11,7 +11,10 @@ export class Tab2Page {
   estudiante: Estudiantes = {
     id: 0,
     nombre: '',
-    nota: 0
+    parcial1:0,
+    parcial2:0,
+    parcial3:0,
+    notafinal: 0
   };
 
   constructor(private EstudiantesService: EstudiantesService ) {}
@@ -26,7 +29,11 @@ export class Tab2Page {
     this.estudiante = {
       id: 0,
       nombre: '',  
-      nota: 1
+
+      parcial1:1,
+      parcial2:1,
+      parcial3:1,
+      notafinal: 1
     };
   }
 }

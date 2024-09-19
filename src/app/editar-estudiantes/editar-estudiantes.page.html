@@ -12,18 +12,37 @@
 <ion-content [fullscreen]="true" *ngIf="seleccionado">
   <form (ngSubmit)="editar(seleccionado)" #editarForm="ngForm">
     <ion-list>
+
       <ion-item>
         <ion-label position="floating">ID:</ion-label>
         <ion-input aria-label="ID" type="text" readonly name="id" [(ngModel)]="seleccionado.id" required></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">Nombre estudiante:</ion-label>
         <ion-input type="text" name="nombre" [(ngModel)]="seleccionado.nombre" required></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">Nota:</ion-label>
-        <ion-input type="text" name="nota" [(ngModel)]="seleccionado.nota" required></ion-input>
+        <ion-input type="text" name="parcial1" [(ngModel)]="seleccionado.parcial1" required></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Nota:</ion-label>
+        <ion-input type="text" name="parcial2" [(ngModel)]="seleccionado.parcial2" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Nota:</ion-label>
+        <ion-input type="text" name="parcial3" [(ngModel)]="seleccionado.parcial3" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Nota:</ion-label>
+        <ion-input type="text" name="notafinal" [(ngModel)]="seleccionado.notafinal" required></ion-input>
+      </ion-item>
+
     </ion-list>
     <ion-button color="primary" type="submit" [disabled]="!editarForm.form.valid">
       Guardar

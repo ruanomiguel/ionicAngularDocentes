@@ -25,6 +25,11 @@ export class Tab2Page {
     });
     this.resetForm();
   }
+  calcularNotaFinal() {
+    const { parcial1, parcial2, parcial3 } = this.estudiante;
+    this.estudiante.notafinal = (parcial1 * 0.35) + (parcial2 * 0.35) + (parcial3 * 0.30);
+  }
+
   resetForm() {
     this.estudiante = {
       id: 0,

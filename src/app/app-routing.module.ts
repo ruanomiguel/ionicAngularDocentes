@@ -21,7 +21,11 @@ const routes: Routes = [
   {
     path: 'detalle-maestro',
     loadChildren: () => import('./detalle-maestro/detalle-maestro.module').then( m => m.DetalleMaestroPageModule)
+  },  {
+    path: 'editar-estudiantes',
+    loadChildren: () => import('./editar-estudiantes/editar-estudiantes.module').then( m => m.EditarEstudiantesPageModule)
   }
+
 
 ];
 @NgModule({

@@ -32,6 +32,10 @@ const routes: Routes = [
         loadChildren: () => import('../editarmaterias/editarmaterias.module').then(m => m.EditarmateriasPageModule)
       },
       {
+        path: 'editar-estudiantes/:id',
+        loadChildren: () => import('../editar-estudiantes/editar-estudiantes.module').then(m => m.EditarEstudiantesPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

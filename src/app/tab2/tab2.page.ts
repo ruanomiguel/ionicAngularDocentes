@@ -29,7 +29,6 @@ export class Tab2Page {
     this.estudiante = {
       id: 0,
       nombre: '',  
-
       parcial1:1,
       parcial2:1,
       parcial3:1,

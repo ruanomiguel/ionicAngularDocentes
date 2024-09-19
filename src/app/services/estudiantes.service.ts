@@ -46,4 +46,14 @@ export class EstudiantesService {
       return of(undefined);
     }
   }
+  addEstudiante(estudiantes: Estudiantes): Observable<Estudiantes[]> { 
+    const newId = ESTUDIANTES.length > 0 ? Math.max(...ESTUDIANTES.map(m => m.id)) + 1 : 1;
+    estudiantes.id = newId;
+    ESTUDIANTES.push(estudiantes);          
+    return of(ESTUDIANTES);
+  }  
+
+
+
+
 }

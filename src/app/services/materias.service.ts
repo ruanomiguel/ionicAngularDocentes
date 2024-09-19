@@ -27,12 +27,12 @@ export class MateriasService {
     return of(MATERIAS.find(x => x.id === id));
  }
 
-   editarMaterias(materias: Materias): Observable<Materias | undefined> {
-       let id = Number(materias.id);
-       let indice:number = MATERIAS.findIndex(x => x.id === id);
-       MATERIAS[indice] = materias;
-       return of(MATERIAS[indice]);
-   }
+ editarMaterias(materias: Materias): Observable<Materias | undefined> {
+     let id = Number(materias.id);
+     let indice:number = MATERIAS.findIndex(x => x.id === id);
+     MATERIAS[indice] = materias;
+     return of(MATERIAS[indice]);
+ }
 
    updateMaterias(id: number, materias: Materias): Observable<Materias | undefined> {
     const index = MATERIAS.findIndex(x => x.id === id);
@@ -45,4 +45,12 @@ export class MateriasService {
       return of(undefined);
     }
   }
+  addMateria(materia: Materias): Observable<Materias[]> { 
+    const newId = MATERIAS.length > 0 ? Math.max(...MATERIAS.map(m => m.id)) + 1 : 1;
+     materia.id = newId;
+    MATERIAS.push(materia);          
+    return of(MATERIAS);
+  }    
+
+
 }

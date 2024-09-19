@@ -1,35 +1,48 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title>Formulario de Materias</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <h2>Formulario de Materias</h2>
-  <form id="materiaForm">
-      <label for="nombre_materia">Nombre de la Materia:</label><br>
-      <input type="text" id="nombre_materia" name="nombre_materia" required><br><br>
+  <form (ngSubmit)="guardarMateria()" #materiaForm="ngForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nombre de asignatura:</ion-label>
+        <ion-input type="text" name="nombre_materia" [(ngModel)]="materia.nombre_materia" required></ion-input>
+      </ion-item>
 
-      <label for="programa">Programa:</label><br>
-      <select id="programa" name="programa" required>
-          <option value="ingenieria">Ingeniería</option>
-          <option value="Desarrollo">Desarrollo</option>
-          <option value="Ciencias">Ciencias</option>
-      </select><br><br>
+      <ion-item>
+        <ion-label position="floating">Programa:</ion-label>
+        <ion-select required [(ngModel)]="materia.programa" name="programa">
+          <ion-select-option value="Ingeniería Informática">Ingeniería Informática</ion-select-option>
+          <ion-select-option value="Ingeniería Multimedia">Ingeniería Multimedia</ion-select-option>
+          <ion-select-option value="Desarrollo de Software">Desarrollo de Software</ion-select-option>
+          <ion-select-option value="Diseño Visual">Diseño Visual</ion-select-option>
+        </ion-select>
+      </ion-item>
 
-      <label for="semestre">Semestre:</label><br>
-      <input type="number" id="semestre" name="semestre" min="1" max="10" required><br><br>
+      <ion-item>
+        <ion-label>Semestre: {{ materia.semestre }}</ion-label>
+        <ion-range min="1" max="10" step="1" snaps="true" [(ngModel)]="materia.semestre" name="semestre">
+          <ion-label slot="start">1</ion-label>
+          <ion-label slot="end">10</ion-label>
+        </ion-range>
+      </ion-item>
 
-      <label for="horario">Horario:</label><br>
-      <input type="time" id="horario" name="horario" required><br><br>
+      <ion-item>
+        <ion-label position="floating">Horario:</ion-label>
+        <ion-input type="text" name="horario" [(ngModel)]="materia.horario"></ion-input>
+      </ion-item>
 
-      <label for="salon">Salón:</label><br>
-      <input type="text" id="salon" name="salon" required><br><br>
+      <ion-item>
+        <ion-label position="floating">Salón:</ion-label>
+        <ion-input type="text" name="salon" [(ngModel)]="materia.salon"></ion-input>
+      </ion-item>
+    </ion-list>
 
-      <button type="submit">Guardar</button>
+    <ion-button color="primary" type="submit" [disabled]="!materiaForm.form.valid">
+      Guardar
+    </ion-button>
   </form>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>

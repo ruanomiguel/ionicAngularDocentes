@@ -12,7 +12,7 @@ import { InformaService } from '../services/informa.service';
 })
 export class InformasPage implements OnInit {
 
-  id:any;
+  materiaId:any;
   seleccionado?: Materias;
   public informas?: informa[];
 
@@ -23,6 +23,7 @@ export class InformasPage implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((params:Params)=> {
+      this.materiaId = params['id'];
       this.materiasService.getUnaMaterias(params['id'])
       .subscribe(seleccionado => {
         this.seleccionado = seleccionado;

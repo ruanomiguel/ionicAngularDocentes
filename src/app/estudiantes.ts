@@ -4,6 +4,6 @@ export interface Estudiantes{
     parcial1: number,
     parcial2: number,
     parcial3: number,
-    notafinal:number
-    
+    notafinal:number,
+    id_materia:number
 }

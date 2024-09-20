@@ -14,7 +14,8 @@ export class Tab2Page {
     parcial1:0,
     parcial2:0,
     parcial3:0,
-    notafinal: 0
+    notafinal: 0,
+    id_materia:0,
   };
 
   constructor(private EstudiantesService: EstudiantesService ) {}
@@ -37,7 +38,8 @@ export class Tab2Page {
       parcial1:1,
       parcial2:1,
       parcial3:1,
-      notafinal: 1
+      notafinal: 1,
+      id_materia:1,
     };
   }
 }

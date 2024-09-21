@@ -32,7 +32,7 @@
   </ion-list>
   
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="../tab2/{{materiaId}}" routerDirection="forward">
+    <ion-fab-button [routerLink]="['/tabs/tab2', materiaId]">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

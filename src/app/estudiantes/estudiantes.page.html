@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Estudiantes</ion-title>
+    <ion-title>Estudiantes de la Materia</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,16 +8,14 @@
   <ion-list>
     <ion-item-sliding *ngFor="let estudianteItem of misestudiantes">
       <ion-item>
-        <ion-icon slot="start" name="book-outline"></ion-icon>
+        <ion-icon slot="start" name="person-outline"></ion-icon>
         <ion-label>
           <h2>Código: {{ estudianteItem.id }}</h2>
-          <p>nombre: {{ estudianteItem.nombre }}</p>
-          <p>nota: {{ estudianteItem.parcial1 }}</p>
-          <p>nota: {{ estudianteItem.parcial2 }}</p>
-          <p>nota: {{ estudianteItem.parcial3 }}</p>
-          <p>nota: {{ estudianteItem.notafinal }}</p>
-
-
+          <p>Nombre: {{ estudianteItem.nombre }}</p>
+          <p>Nota 1: {{ estudianteItem.parcial1 }}</p>
+          <p>Nota 2: {{ estudianteItem.parcial2 }}</p>
+          <p>Nota 3: {{ estudianteItem.parcial3 }}</p>
+          <p>Nota Final: {{ estudianteItem.notafinal }}</p>
         </ion-label>
       </ion-item>
     
@@ -26,19 +24,16 @@
           <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-item-option>
         
-
         <ion-item-option routerLink="../editar-estudiantes/{{estudianteItem.id}}">
           <ion-icon slot="icon-only" name="pencil"></ion-icon>
         </ion-item-option>
-
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
   
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="../tab2" routerDirection="forward">
+    <ion-fab-button routerLink="../tab2/{{materiaId}}" routerDirection="forward">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
 </ion-content>

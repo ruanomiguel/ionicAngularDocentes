@@ -47,6 +47,7 @@ const routes: Routes = [
         path: 'estudiantes/:id',
         loadChildren: () => import('../estudiantes/estudiantes.module').then(m => m.EstudiantesPageModule)
       },
+      
       {
         path: 'tab2/:id',
         loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
@@ -55,6 +56,10 @@ const routes: Routes = [
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
+      },
+      {
+        path: 'estudiantes/:idMateria',
+        loadChildren: () => import('../estudiantes/estudiantes.module').then(m => m.EstudiantesPageModule)
       }
     ]
   },

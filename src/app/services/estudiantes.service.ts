@@ -11,6 +11,10 @@ export class EstudiantesService {
 
   constructor() { }
 
+  getEstudiantesPorMateria(materiaId: number): Observable<Estudiantes[]> {
+    return of(ESTUDIANTES.filter(estudiante => estudiante.id_materia === materiaId));
+  }
+
   getEstudiantes(): Observable<Estudiantes[]>{
     return of(ESTUDIANTES);
   }

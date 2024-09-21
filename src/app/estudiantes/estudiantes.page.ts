@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Estudiantes } from '../estudiantes';
 import { EstudiantesService } from '../services/estudiantes.service';
 import { NavController, AlertController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-estudiantes',
@@ -11,20 +12,29 @@ import { NavController, AlertController } from '@ionic/angular';
 export class EstudiantesPage implements OnInit {
 
   misestudiantes: Estudiantes[] = []; // Declarar la variable
+  materiaId: number =0;
 
   constructor(
-    private estudiantesService: EstudiantesService, // El nombre correcto del servicio
-    public alertController: AlertController // Corregido el nombre
+    private route: ActivatedRoute,
+    private estudiantesService: EstudiantesService,
+    public alertController: AlertController
   ) {}
 
+  
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.materiaId = +params['id']; // El '+' convierte el string a número
+      this.getEstudiantes();
+    });
+  }
+
   getEstudiantes(): void {
-    this.estudiantesService.getEstudiantes()
+    this.estudiantesService.getEstudiantesPorMateria(this.materiaId)
       .subscribe(estudiantes => this.misestudiantes = estudiantes);
   }
 
-  ngOnInit() {
-    this.getEstudiantes();
-  }
+  
 
   async borrarEstudiantes(estudiante: Estudiantes) {
     const alert = await this.alertController.create({ // Corregido el uso de alertController

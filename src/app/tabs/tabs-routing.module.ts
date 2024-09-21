@@ -60,7 +60,12 @@ const routes: Routes = [
       {
         path: 'estudiantes/:idMateria',
         loadChildren: () => import('../estudiantes/estudiantes.module').then(m => m.EstudiantesPageModule)
+      },
+      {
+        path: 'editar-estudiantes/:id/:materiaId',
+        loadChildren: () => import('../editar-estudiantes/editar-estudiantes.module').then(m => m.EditarEstudiantesPageModule)
       }
+      
     ]
   },
   {

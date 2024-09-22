@@ -12,6 +12,7 @@ export class Tab2Page {
   nuevoEstudiante: Estudiantes = {
     id: 0,
     nombre: '',
+    faltas_numericas:0,
     parcial1: 0,
     parcial2: 0,
     parcial3: 0,
